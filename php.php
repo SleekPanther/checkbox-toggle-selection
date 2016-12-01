@@ -9,8 +9,8 @@
 		//add property to all inputs, doesn't care if it already exists
 		function selectAll(nameToInvert){
 			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
-			$.each(inputs, function(index){	//iterate over each item in array
-				var item=$(inputs[index]);	//get element by name or something, returns html object
+			$.each(inputs, function(index){		//iterate over each item in array
+				var item=$(inputs[index]);		//get element by name or something, returns html object
 				// console.log(item.val());
 				item.prop("checked", true);
 			});
@@ -18,8 +18,8 @@
 
 		function selectNone(nameToInvert){
 			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
-			$.each(inputs, function(index){	//iterate over each item in array
-				var item=$(inputs[index]);	//get html object
+			$.each(inputs, function(index){		//iterate over each item in array
+				var item=$(inputs[index]);		//get html object
 				// console.log(item.val());
 				item.prop("checked", false);
 			});
@@ -48,23 +48,6 @@
 				}
 			});
 		}
-
-		// function set(n) {
-		// 	temp = document.form1.elements.length ;
-		// 	alert(document.form1.elements.length);
-		// 	for (i=0; i < temp; i++) {
-		// 		document.form1.elements[i].checked=n;
-		// 	}
-		// }
-
-		// function Invers(){
-		// 	temp = document.form1.elements.length ;
-		// 	for (i=0; i < temp; i++){
-		// 		if(document.form1.elements[i].checked == 1){document.form1.elements[i].checked = 0;}
-		// 		else {document.form1.elements[i].checked = 1}
-		// 	}
-		// }
-
 	</script>
 </head>
 <body>
@@ -80,14 +63,13 @@
 		<input type='checkbox' name='chkBoxes[]' value='2'>
 		<input type='checkbox' name='chkBoxes[]' value='3'>
 		<input type='checkbox' name='chkBoxes[]' value='4'>
-		<input type="button" name="button" onclick="Invers()" value=" Invert original">
-		<input type="button" name="button" onclick="set(0)" value=" Reset 0">
 		
 		<br>
 		<input type="button" name="btnAll" onclick="selectAll('chkBoxes[]')" value="All">
 		<input type="button" name="btnNone" onclick="selectNone('chkBoxes[]')" value="None">
 		<input type="button" name="btnInvert" onclick="invert('chkBoxes[]')" value="Invert">
-
+		
+		<br>
 		<input type="submit" value='Submit' name='btnSubmit'>
 	</form>
 	<p>Click on this paragraph.</p>
