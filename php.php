@@ -24,7 +24,7 @@
 		// });
 
 	//http://stackoverflow.com/questions/18439468/why-is-jquery-is-not-checking-unchecking-checkbox
-		function Invert(nameToInvert){
+		function invert(nameToInvert){
 			// alert(nameToInvert);
 			var a=$( "input[name='"+nameToInvert+"']" );	//array of checkboxes with name=input parameter
 			// console.log($(a[3]).val());
@@ -79,9 +79,13 @@
 		<input type='checkbox' name='chkBoxes[]' value='2'>
 		<input type='checkbox' name='chkBoxes[]' value='3'>
 		<input type='checkbox' name='chkBoxes[]' value='4'>
-		<input type="button" name="button" onclick="Invers()" value=" Invert original"> 
-		<input type="button" name="button" onclick="set(0)" value=" Reset "> 
-		<input type="button" name="button" onclick="Invert('chkBoxes[]')" value="Invert 2">
+		<input type="button" name="button" onclick="Invers()" value=" Invert original">
+		<input type="button" name="button" onclick="set(0)" value=" Reset 0">
+		
+		<br>
+		<input type="button" name="btnAll" onclick="all('chkBoxes[]')" value="All">
+		<input type="button" name="btnNone" onclick="none('chkBoxes[]')" value="None">
+		<input type="button" name="btnInvert" onclick="invert('chkBoxes[]')" value="Invert">
 
 		<input type="submit" value='Submit' name='btnSubmit'>
 	</form>
