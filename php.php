@@ -16,6 +16,15 @@
 			});
 		}
 
+		function selectNone(nameToInvert){
+			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
+			$.each(inputs, function(index){	//iterate over each item in array
+				var item=$(inputs[index]);	//get html object
+				// console.log(item.val());
+				item.prop("checked", false);
+			});
+		}
+
 		function invert(nameToInvert){
 			// alert(nameToInvert);
 			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
@@ -76,7 +85,7 @@
 		
 		<br>
 		<input type="button" name="btnAll" onclick="selectAll('chkBoxes[]')" value="All">
-		<input type="button" name="btnNone" onclick="none('chkBoxes[]')" value="None">
+		<input type="button" name="btnNone" onclick="selectNone('chkBoxes[]')" value="None">
 		<input type="button" name="btnInvert" onclick="invert('chkBoxes[]')" value="Invert">
 
 		<input type="submit" value='Submit' name='btnSubmit'>
