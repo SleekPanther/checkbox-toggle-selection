@@ -6,16 +6,23 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 	<script>
-		
+		//add property to all inputs, doesn't care if it already exists
+		function selectAll(nameToInvert){
+			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
+			$.each(inputs, function(index){	//iterate over each item in array
+				var item=$(inputs[index]);	//get element by name or something, returns html object
+				// console.log(item.val());
+				item.prop("checked", true);
+			});
+		}
 
-	//http://stackoverflow.com/questions/18439468/why-is-jquery-is-not-checking-unchecking-checkbox
 		function invert(nameToInvert){
 			// alert(nameToInvert);
-			var a=$( "input[name='"+nameToInvert+"']" );	//array of checkboxes with name=input parameter
-			// console.log($(a[3]).val());
-			$.each(a, function(i){	//iterate over each item in array (i somehow starts @ 0 & increments correctly)
-				var item=$(a[i]);	//get element by name or something, returns html object
-				// console.log($(a[i]).val());
+			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
+			// console.log($(inputs[3]).val());
+			$.each(inputs, function(index){	//iterate over each item in array (i somehow starts @ 0 & increments correctly)
+				var item=$(inputs[index]);	//get element by name or something, returns html object
+				// console.log($(inputs[index]).val());
 				if(item.attr('checked') || item.is(':checked')){	//might not need the extra test
 					console.log(item.val()+ ' new test');
 					item.prop("checked", false);
@@ -68,7 +75,7 @@
 		<input type="button" name="button" onclick="set(0)" value=" Reset 0">
 		
 		<br>
-		<input type="button" name="btnAll" onclick="all('chkBoxes[]')" value="All">
+		<input type="button" name="btnAll" onclick="selectAll('chkBoxes[]')" value="All">
 		<input type="button" name="btnNone" onclick="none('chkBoxes[]')" value="None">
 		<input type="button" name="btnInvert" onclick="invert('chkBoxes[]')" value="Invert">
 
