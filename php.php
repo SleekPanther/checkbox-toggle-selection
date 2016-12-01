@@ -75,14 +75,14 @@ print_r($_POST);
 echo "</pre>";
 ?>
 
-<FORM method="post" action='2.php'> 
-	<INPUT name='chkBoxes[]'  type='checkbox' value='1'> 
-	<INPUT name='chkBoxes[]' type='checkbox' value='2'> 
-	<INPUT name='chkBoxes[]' type='checkbox' value='3'> 
-	<INPUT name='chkBoxes[]' type='checkbox' value='4'> 
-	<INPUT name="button" onclick="Invers()" type="button" value=" Invert original"> 
-	<INPUT name="button" onclick="set(0)" type="button" value=" Reset "> 
-	<INPUT name="button" onclick="Invert('chkBoxes[]')" type="button" value="Invert 2"> 
+<form method="post" action='php.php'> 
+	<input type='checkbox' name='chkBoxes[]' value='1' checked> 
+	<input type='checkbox' name='chkBoxes[]' value='2'> 
+	<input type='checkbox' name='chkBoxes[]' value='3'> 
+	<input type='checkbox' name='chkBoxes[]' value='4'> 
+	<input type="button" name="button" onclick="Invers()" value=" Invert original"> 
+	<input type="button" name="button" onclick="set(0)" value=" Reset "> 
+	<input type="button" name="button" onclick="Invert('chkBoxes[]')" value="Invert 2"> 
 	<input type="submit">
 </form>
 <p>Click on this paragraph.</p>
