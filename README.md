@@ -2,6 +2,9 @@
 
 Uses jQuery & JavaScript to select the opposite of any checkboxes that are currently selected
 
+No CSS just to make things easier to understand  
+Possible improvements could be styling the buttons
+
 ###Tutorial Sources
 I cobbled together my own `invert()` function based on various sources. All of which I found to not meet my standards or were too complex
 

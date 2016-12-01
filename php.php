@@ -59,6 +59,7 @@
 	?>
 
 	<form method="post" action='php.php'> 
+		<p>Checkboxes</p>
 		<input type='checkbox' name='chkBoxes[]' value='1'>
 		<input type='checkbox' name='chkBoxes[]' value='2'>
 		<input type='checkbox' name='chkBoxes[]' value='3'>
@@ -68,7 +69,13 @@
 		<input type="button" name="btnAll" onclick="selectAll('chkBoxes[]')" value="All">
 		<input type="button" name="btnNone" onclick="selectNone('chkBoxes[]')" value="None">
 		<input type="button" name="btnInvert" onclick="invert('chkBoxes[]')" value="Invert">
-		
+
+
+		<p>Radio Buttons</p>
+		<input type='radio' name='radRadios' value='1'>
+		<input type='radio' name='radRadios' value='2'>
+		<input type="button" name="btnNone" onclick="selectNone('radRadios')" value="None">
+
 		<br>
 		<input type="submit" value='Submit' name='btnSubmit'>
 	</form>
