@@ -6,22 +6,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 	<script>
-		//updates the html to always add & subtract the checked attribute
-		//needed so that inverse actually has something to remove or add
-
-		// $(document).ready(function(){
-		// 	$("input[type='checkbox']").click(function(){
-		// 		//alert(0);
-		// 		if ( ($(this).is(':checked')) ) {
-		// 			console.log($(this).val() + ' is now checked');
-		// 			// alert('not');
-		// 			$(this).attr('checked','checked');
-		// 		} else {
-		// 			console.log($(this).val() + ' is now unchecked');
-		// 			$(this).removeAttr('checked');
-		// 		}
-		// 	});
-		// });
+		
 
 	//http://stackoverflow.com/questions/18439468/why-is-jquery-is-not-checking-unchecking-checkbox
 		function invert(nameToInvert){
