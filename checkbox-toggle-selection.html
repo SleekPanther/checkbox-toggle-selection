@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Noah Patullo">
+        <meta name="description" content="">
+        <title>Checkboxes</title>
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" language="javascript"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+	<script type="text/javascript" language="javascript">
+
+		// $( function() {
+
+		// 	$( '.checkAll' ).live( 'change', function() {
+		// 		$( '.cb-element' ).attr( 'checked', $( this ).is( ':checked' ) ? 'checked' : '' );
+		// 		$( this ).next().text( $( this ).is( ':checked' ) ? 'Uncheck All' : 'Check All' );
+		// 	});
+		// 	$( '.invertSelection' ).live( 'click', function() {
+		// 		$( '.cb-element' ).each( function() {
+		// 			$( this ).attr( 'checked', $( this ).is( ':checked' ) ? '' : 'checked' );
+		// 		}).trigger( 'change' );
+
+		// 	});
+		// 	$( '.cb-element' ).live( 'change', function() {
+		// 		$( '.cb-element' ).length == $( '.cb-element:checked' ).length ? $( '.checkAll' ).attr( 'checked', 'checked' ).next().text( 'Uncheck All' ) : $( '.checkAll' ).attr( 'checked', '' ).next().text( 'Check All' );
+
+		// 	});
+		// });
+	</script>
+
+    </head>
+    <body>
+<!-- http://www.webdeveloperjuice.com/2010/03/15/check-all-uncheck-all-and-invert-checkboxes-using-jquery/
+http://www.webdeveloperjuice.com/demos/jquery/checkall.html -->
+
+
+    <!-- <?php
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+    ?> -->
+<!-- <form action="jquery-invert-selection-checkbox.php" method="post">
+		<div class="container">
+			<div class="controls">
+				<span><input type="checkbox" class="checkAll" /> <b>Check All</b> <span> or 
+				<span><a href="#" onclick='invert()' class="invertSelection">Invert Selection</a></span>
+			</div>
+			<div class="elements">
+				<span><input type="checkbox" class="cb-element" name="chkBoxes[]" value='1'> Checkbox 1</span>
+				<span><input type="checkbox" class="cb-element" name="chkBoxes[]" value='2'> Checkbox 2</span>
+				<span><input type="checkbox" class="cb-element" name="chkBoxes[]" value='3'> Checkbox 3</span>
+				<span><input type="checkbox" class="cb-element" name="chkBoxes[]" value='4'> Checkbox 4</span>
+				<span><input type="checkbox" class="cb-element" name="chkBoxes[]" value='5'> Checkbox 5</span>
+		</div>
+		<input type="submit" value='submit'>
+</form> -->
+
+<script language=JavaScript>
+	// function set(n) {
+	// 	temp = document.form1.elements.length ;
+	// 	alert(document.form1.elements.length);
+	// 	for (i=0; i < temp; i++) {
+	// 		document.form1.elements[i].checked=n;
+	// 	}
+	// }
+
+	// function Invers(){
+	// 	temp = document.form1.elements.length ;
+	// 	for (i=0; i < temp; i++){
+	// 		if(document.form1.elements[i].checked == 1){document.form1.elements[i].checked = 0;}
+	// 		else {document.form1.elements[i].checked = 1}
+	// 	}
+	// }
+
+
+	// $("#aa").click(function(){
+	// 	console.log(11);
+	// });
+	// $(document).on('change', 'input[type="checkbox"]', function(e){
+ //        console.log(e);
+ //    });
+// $('#myCheckBox').click (function (){
+//     // if (this.checked) {
+//         alert("Thanks for checking me");
+//     // }
+// });
+
+
+
+// used item here
+	function Inverse(nameToInvert){
+		// alert(nameToInvert);
+		var a=$( "input[name='"+nameToInvert+"']" );	//array of checkboxes with name=input parameter
+		// console.log($(a[3]).val());
+		$.each(a, function(i){	//iterate over each item in array (i somehow starts @ 0 & increments correctly)
+			var item=$(a[i]);	//get element by name or something, returns html object
+			// console.log($(a[i]).val());
+			if(item.is(':checked')){	//if currently checked, remove attribute
+				console.log(item.val());
+				item.removeAttr('checked');
+			}
+			else{	//else add attricute back (looks like duplicate for "('checked','checked')" but this yields checked="checked" in the final html. Adds attribute & adds value to attribute)
+				console.log(item.val()+' not currently checked');
+				item.attr('checked','checked');
+			}
+		});
+	}
+
+		//http://markojakic.net/jquery-checkboxes-inverse-selection
+		// $('a#cb-inverse').click(function() {
+		// 	$('input.my_cb').each(function() {
+		// 		$(this).is(':checked') ? $(this).removeAttr('checked') : $(this).attr('checked','checked');
+		// 	});
+		// });
+</script> 
+
+<FORM method=post name=form1> 
+<p id='myDivId'>asdgasdgsdf</p>
+<INPUT name='chkBoxes[]'  type=checkbox value='1'> 
+<INPUT name='chkBoxes[]' type=checkbox value='2'> 
+<INPUT name='chkBoxes[]' type=checkbox value='3'> 
+<INPUT name='chkBoxes[]' type=checkbox value='4'> 
+<INPUT name=button onclick=Invers() type=button value=" Invert "> 
+<INPUT name=button onclick=set(0) type=button value=" Reset "> 
+<INPUT name=button onclick=Inverse('chkBoxes[]') type=button value="Invert 2"> 
+<input type="submit">
+</form>
+
+
+    </body>
+</html>

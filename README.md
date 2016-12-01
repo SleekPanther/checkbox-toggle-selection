@@ -1,2 +1,2 @@
-# checkbox-toggle-selection
-Invert Selection of checkboxes or radio buttons in an HTML form
+# Invert Selection (Toggle Selection) Checkboxes & Radio Buttons (HTML forms)
+
