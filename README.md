@@ -2,6 +2,13 @@
 
 Uses jQuery & JavaScript to select the opposite of any checkboxes that are currently selected
 
+##jQuery Functions
+- Invert Current Selection (checkboxes)
+- Select All
+- Select None
+
+Select None works to **deselect radio buttons**
+
 No CSS just to make things easier to understand  
 Possible improvements could be styling the buttons
 
