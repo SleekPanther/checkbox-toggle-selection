@@ -51,6 +51,8 @@
 	</script>
 </head>
 <body>
+	<h1><a href='https://github.com/SleekPanther/checkbox-toggle-selection'>Checkbox Toggle Selection</a></h1>
+	<p>PHP demo of invert, select all & none methods for checkboxed radio buttons <br><a href='html.html'>view plain html version</a></p>
 
 	<?php 
 	echo "<pre>";
@@ -74,7 +76,7 @@
 		<p>Radio Buttons</p>
 		<input type='radio' name='radRadios' value='1'>
 		<input type='radio' name='radRadios' value='2'>
-		<input type="button" name="btnNone" onclick="selectNone('radRadios')" value="None">
+		<input type="button" name="btnNone" onclick="selectNone('radRadios')" value="Deselect">
 
 		<br>
 		<input type="submit" value='Submit' name='btnSubmit'>
