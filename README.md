@@ -2,6 +2,8 @@
 
 Uses jQuery & JavaScript to select the opposite of any checkboxes that are currently selected
 
+##[Web Live Demo (coming soon)]() <!-- https://npatullo.w3.uvm.edu/toggle  -->
+
 ##jQuery Functions
 - Invert Current Selection (checkboxes)
 - Select All
@@ -13,7 +15,7 @@ No CSS just to make things easier to understand
 Possible improvements could be styling the buttons
 
 ###Tutorial Sources
-I cobbled together my own `invert()` function based on various sources. All of which I found to not meet my standards or were too complex
+I cobbled together my own `invert()` function based on various sources because none of them individually was exactly what I was looking for
 
 - **[JQuery checkboxes inverse selection | Marko Jakic](http://markojakic.net/jquery-checkboxes-inverse-selection) Probably the most help, but added to it & expanded compact if-else form**
 - **[Stack Overflow: javascript - Why is jQuery is not checking/unchecking checkbox](http://stackoverflow.com/a/18439482) finally figured out why adding `checked` wasn't actually updating the html**
