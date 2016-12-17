@@ -6,52 +6,52 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
 	<script>
-		//add property to all inputs, doesn't care if it already exists
+		//All 3 functions take in the HTML name attribute of a certain group of input elements & performs the action (select all, none, invert) ONLY ON THAT GROUP
+
+		//Select all items in a group when given the HTML name attribute of some input elements in a group
 		function selectAll(nameToInvert){
-			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
-			$.each(inputs, function(index){		//iterate over each item in array
-				var item=$(inputs[index]);		//get element by name or something, returns html object
-				// console.log(item.val());
-				item.prop("checked", true);
+			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
+			$.each(inputs, function(index){		//iterate over each item in "inputs" array
+				var element=$(inputs[index]);		//get HTML object of each input element in the array
+				element.prop("checked", true);		//Adds the property to all inputs. Doesn't matter if it's already true, changes the value to true anyway (redundant but not harmful)
 			});
 		}
 
+		//Same structure as "selectAll()" but it changes the "checked" property to "false" to unselect each item
 		function selectNone(nameToInvert){
-			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
-			$.each(inputs, function(index){		//iterate over each item in array
-				var item=$(inputs[index]);		//get html object
-				// console.log(item.val());
-				item.prop("checked", false);
+			var inputs=$( "input[name='"+nameToInvert+"']" );
+			$.each(inputs, function(index){	
+				var element=$(inputs[index]);	
+				element.prop("checked", false);		//deselect the item
 			});
 		}
 
 		function invert(nameToInvert){
 			// alert(nameToInvert);
-			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with name==(input parameter)
-			// console.log($(inputs[3]).val());
-			$.each(inputs, function(index){	//iterate over each item in array (i somehow starts @ 0 & increments correctly)
-				var item=$(inputs[index]);	//get element by name or something, returns html object
+			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
+			$.each(inputs, function(index){	//iterate over each item in "inputs" array (i somehow starts @ 0 & increments correctly)
+				var element=$(inputs[index]);	//get element by name or something, returns html object
 				// console.log($(inputs[index]).val());
-				if(item.attr('checked') || item.is(':checked')){	//might not need the extra test
-					console.log(item.val()+ ' new test');
-					item.prop("checked", false);
-					// item.removeAttr('checked');
+				if(element.attr('checked') || element.is(':checked')){	//might not need the extra test
+					console.log(element.val()+ ' new test');
+					element.prop("checked", false);
+					// element.removeAttr('checked');
 				}
-				// if(item.is(':checked')){	//if currently checked, remove attribute
-				// 	console.log(item.val());
-				// 	item.removeAttr('checked');
+				// if(element.is(':checked')){	//if currently checked, remove attribute
+				// 	console.log(element.val());
+				// 	element.removeAttr('checked');
 				// }
 				else{	//else add attricute back (looks like duplicate for "('checked','checked')" but this yields checked="checked" in the final html. Adds attribute & adds value to attribute)
-					console.log(item.val()+' not currently checked');
-					item.prop("checked", true);
-					// item.attr('checked','checked');
+					console.log(element.val()+' not currently checked');
+					element.prop("checked", true);
+					// element.attr('checked','checked');
 				}
 			});
 		}
 	</script>
 </head>
 <body>
-	<h1><a href='https://github.com/SleekPanther/checkbox-toggle-selection'>Checkbox Toggle Selection</a></h1>
+	<h1><a href='https://github.com/SleekPanther/checkbox-toggle-selection'>Checkbox Toggle Selection PHP</a></h1>
 	<p>PHP demo of invert, select all & none methods for checkboxes & radio buttons <br><a href='html.html'>View plain html version</a></p>
 
 	<?php
