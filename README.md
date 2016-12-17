@@ -2,17 +2,35 @@
 
 Uses jQuery & JavaScript to select the opposite of any checkboxes that are currently selected
 
-##[Web Live Demo (coming soon)]() <!-- https://npatullo.w3.uvm.edu/toggle  -->
+##[Live Demo](https://npatullo.w3.uvm.edu/toggle/)
+This uses PHP, but there is also a [pure HTML version](https://npatullo.w3.uvm.edu/toggle/html.html), as the focus of this project was on the jQuery methods, not PHP forms
 
 ##jQuery Functions
-- Invert Current Selection (checkboxes)
-- Select All
-- Select None
+- `Invert Current Selection` (checkboxes only)
+- `Select All`
+- `Select None`
 
-Select None works to **deselect radio buttons**
+`Select None` works to **deselect radio buttons**
 
 No CSS just to make things easier to understand  
 Possible improvements could be styling the buttons
+
+##Code Details & Use
+###General
+- jQuery functions set the **property** of an input element using `item.prop("checked", true);` because `item.attr('checked','checked');` doesn't work.  
+It updates the HTML & you can see it happen in realtime using *Inspect Element*, but the actual page doesn't change
+- 
+
+###PHP Version Specific
+- Form submits to itself
+- Currently prints out the contents of the $_POST array when form is submitted
+- Uses a for loop to print checkboxes & labels (or just use the html version)
+
+###Pure HTML Version Specific
+- No form processing (since it's basic HTML)
+
+##Previous Versions (failed attempts)
+The `attempts/` folder is a colleections of my initial versions which didn't pan out
 
 ###Tutorial Sources
 I cobbled together my own `invert()` function based on various sources because none of them individually was exactly what I was looking for
