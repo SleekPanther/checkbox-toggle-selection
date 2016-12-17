@@ -10,7 +10,7 @@
 
 		//Select all items in a group when given the HTML name attribute of some input elements in a group
 		function selectAll(nameToInvert){
-			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
+			var inputs=$("input[name='"+nameToInvert+"']");	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
 			$.each(inputs, function(index){		//iterate over each item in "inputs" array
 				var element=$(inputs[index]);		//get HTML object of each input element in the array
 				element.prop("checked", true);		//Adds the property to all inputs. Doesn't matter if it's already true, changes the value to true anyway (redundant but not harmful)
@@ -19,33 +19,22 @@
 
 		//Same structure as "selectAll()" but it changes the "checked" property to "false" to unselect each item
 		function selectNone(nameToInvert){
-			var inputs=$( "input[name='"+nameToInvert+"']" );
+			var inputs=$("input[name='"+nameToInvert+"']");
 			$.each(inputs, function(index){	
 				var element=$(inputs[index]);	
 				element.prop("checked", false);		//deselect the item
 			});
 		}
 
+		//iterate through an array of input elements & reverse the "checked" property
 		function invert(nameToInvert){
-			// alert(nameToInvert);
-			var inputs=$( "input[name='"+nameToInvert+"']" );	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
-			$.each(inputs, function(index){	//iterate over each item in "inputs" array (i somehow starts @ 0 & increments correctly)
-				var element=$(inputs[index]);	//get element by name or something, returns html object
-				// console.log($(inputs[index]).val());
-				if(element.attr('checked') || element.is(':checked')){	//might not need the extra test
-					console.log(element.val()+ ' new test');
-					element.prop("checked", false);
-					// element.removeAttr('checked');
-				}
-				// if(element.is(':checked')){	//if currently checked, remove attribute
-				// 	console.log(element.val());
-				// 	element.removeAttr('checked');
-				// }
-				else{	//else add attricute back (looks like duplicate for "('checked','checked')" but this yields checked="checked" in the final html. Adds attribute & adds value to attribute)
-					console.log(element.val()+' not currently checked');
-					element.prop("checked", true);
-					// element.attr('checked','checked');
-				}
+			var inputs=$("input[name='"+nameToInvert+"']");	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
+			$.each(inputs, function(index){		//iterate over each item in "inputs" array
+				var element=$(inputs[index]);	//get HTML object of each input element in the array
+
+				var currentlySelected=element.prop("checked");	//get true/false if it's currently selected or not
+				//MOST IMPORTANT LINE
+				element.prop("checked", !currentlySelected);	//set the new property to be the NEGATION of its previous state (true==>false & false==>true)
 			});
 		}
 	</script>
