@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Invert Selection</title>
+	<title>Toggle/Invert Selection Checkboxes/Radio Buttons</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
+	<!-- This script can easily be moved to its own file. I left it here for simplicity -->
 	<script>
 		//All 3 functions take in the HTML name attribute of a certain group of input elements & performs the action (select all, none, invert) ONLY ON THAT GROUP
 

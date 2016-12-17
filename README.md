@@ -50,13 +50,13 @@ This guarantees all items in a group are checked & it doesn't hurt to set the pr
 ###PHP Version Specific
 - Form submits to itself
 - Prints out the contents of the `$_POST` array (empty to start since form isn't submitted)
-- Uses a for loop to print checkboxes & labels (or just use the html version)
+- Uses a for loop to print checkboxes & labels (or just use the HTML version)
 
 ###Pure HTML Version Specific
 - No form processing (since it's basic HTML)
 
 ##Previous Versions (failed attempts)
-The `attempts/` folder is a colleections of my initial versions which didn't pan out
+The `attempts/` folder is a collections of my initial versions which didn't pan out
 
 ###Tutorial Sources
 I cobbled together my own `invert()` function based on various sources because none of them individually was exactly what I was looking for
