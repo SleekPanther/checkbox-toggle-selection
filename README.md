@@ -11,6 +11,7 @@ This uses PHP, but there is also a [pure HTML version](https://npatullo.w3.uvm.e
 - `Select None`
 
 `Select None` works to **deselect radio buttons**  
+**This is for mutually exclusive choices, but the entire is question optional & you want** ***`no response`*** **to be valid**  
 The other 2 functions *can* be used on radio buttons, but **aren't effective** since radio buttons are mutually exclusive & results in the last radio button being selected  
 It doesn't break anything, just doesn't work as intended
 
@@ -37,14 +38,14 @@ This says:
     3. Only `invert()` the checkboxes in the group `chkBoxes[]`
 - The only difference for `selectAll()` and `selectNone()` is the name of the function to call
 - Buttons are only linked to checkbox groups by the parameter they send to the function so can technically appear anywhere on the page, but should be close to their linked HTML elements for ease of use
--  
+- &nbsp;
 - jQuery functions set the **property** of an input element using `item.prop("checked", true);` because `item.attr('checked','checked');` doesn't work  
 `attr` updates the HTML & you can see it happen in realtime using *Inspect Element*, but the actual page doesn't change
 - `selectAll` simply adds `element.prop("checked", true);` to every element in a group regardless of its current state  
 This guarantees all items in a group are checked & it doesn't hurt to set the property to `true` if it's already `true`
 - `selectNone` is the opposite & simply sets the `property` to `false`
 - The `invert` function checks if an input is checked (true/false) & sets the new property to the opposite of its previous state by negating `true` or `false`
--  
+- &nbsp;
 - **USE `selectNone` ON RADIO BUTTONS TO "DE-SELECT" THE RADIO BUTTON ALTOGETHER, BUT `invert` & `selectNone` WON'T WORK FOR RADIO BUTTONS***
 
 ###PHP Version Specific
