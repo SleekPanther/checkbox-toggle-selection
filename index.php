@@ -12,7 +12,7 @@
 		//Select all items in a group when given the HTML name attribute of some input elements in a group
 		function selectAll(nameToInvert){
 			var inputs=$("input[name='"+nameToInvert+"']");	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
-			$.each(inputs, function(index){		//iterate over each item in "inputs" array
+			$.each(inputs, function(index){			//iterate over each item in "inputs" array
 				var element=$(inputs[index]);		//get HTML object of each input element in the array
 				element.prop("checked", true);		//Adds the property to all inputs. Doesn't matter if it's already true, changes the value to true anyway (redundant but not harmful)
 			});
@@ -27,9 +27,9 @@
 			});
 		}
 
-		//iterate through an array of input elements & reverse the "checked" property
+		//iterate through an array of input elements & negate the "checked" property
 		function invert(nameToInvert){
-			var inputs=$("input[name='"+nameToInvert+"']");	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
+			var inputs=$("input[name='"+nameToInvert+"']");		//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
 			$.each(inputs, function(index){		//iterate over each item in "inputs" array
 				var element=$(inputs[index]);	//get HTML object of each input element in the array
 
@@ -42,7 +42,7 @@
 </head>
 <body>
 	<h1><a href='https://github.com/SleekPanther/checkbox-toggle-selection'>Checkbox Toggle Selection PHP</a></h1>
-	<p>PHP demo of invert, select all & none methods for checkboxes & radio buttons <br><a href='html.html'>View plain html version</a></p>
+	<p>Demo of invert(), selectAll() & selectNone() functions for checkboxes & radio buttons</p>
 
 	<?php
 	//display form data submitted to itself
