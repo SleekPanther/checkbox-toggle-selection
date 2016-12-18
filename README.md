@@ -3,7 +3,7 @@
 Uses jQuery & JavaScript to select the opposite of any checkboxes that are currently selected
 
 ##[Live Demo](https://npatullo.w3.uvm.edu/toggle/)
-This uses PHP, but there is also a [pure HTML version](https://npatullo.w3.uvm.edu/toggle/html.html), as the focus of this project was on the jQuery methods, not PHP forms
+This uses PHP, but you can simply `view page source` to get a pure HTML version
 
 ##jQuery Functions
 - `Invert Current Selection` (checkboxes only)
@@ -11,35 +11,38 @@ This uses PHP, but there is also a [pure HTML version](https://npatullo.w3.uvm.e
 - `Select None`
 
 `Select None` works to **deselect radio buttons**  
-**This is for mutually exclusive choices, but the entire is question optional & you want** ***`no response`*** **to be valid**  
-The other 2 functions *can* be used on radio buttons, but **aren't effective** since radio buttons are mutually exclusive & results in the last radio button being selected  
+**This is for mutually exclusive choices, but when the entire is question optional & you want** ***`no response`*** **to be valid**  
+The other 2 functions *can* be used on radio buttons, but **aren't effective** since radio buttons are mutually exclusive.  
+**Results in the last radio button being selected**  
 It doesn't break anything, just doesn't work as intended
 
 No CSS just to make things easier to understand  
 Possible improvements could be styling the buttons
 
-##Code Details & Use
+##Code Details & Usage
 ###jQuery Functions (General Usage)
 - jQuery functions work by taking in an input parameter which is the `name` attribute of an HTML input tag  
 This should be the `name` **for a group of elements**  
 The action to **select all, none, or invert** is only performed on that group
-- Checkbox in a group **must have square brackets `[]` after** as part of the `name` attribute  
+*You should create a new different set of buttons for each group where you want the functionality*
+- The `name` attribute of each checkbox in a group **must have square brackets `[]` at the end**
 `<input type='checkbox' id='chk1' name='chkBoxes[]' value='1'>`  
 `<input type='checkbox' id='chk2' name='chkBoxes[]' value='2'>`  
-**Notice the `[]` in `name='chkBoxes[]`**  
-This puts an array of checkboxes in the `$_POST` array when the form is submitted for easier processing
+**Notice the `[]` in `name='chkBoxes[]'`**  
+This puts an array of checkboxes in the `$_POST` array when the form is submitted, instead of individual checkboxes. (For easier processing)
 - [Read this article](http://www.wastedpotential.com/html-multi-checkbox-set-the-correct-way-to-group-checkboxes/) to learn about **checkbox groups**
-- **Radio buttons** are mutually exclusive by design so no need for [], just group them by having the **same exact `name` attribute for a group**
-- An HTML button with an `onClick` event handler must be placed on the page near the checkboxes with the correct argument in the function call  
+- **Radio buttons** are mutually exclusive by design so no need for brackets `[]`, just group them by having the **same exact `name` attribute for a group**
+- An HTML button with an `onClick` event handler must be placed on the page near the checkboxes with the **correct argument in the function call**  
 `<input type="button" name="btnInvert" onclick="invert('chkBoxes[]')" value="Invert">`  
 This says:
     1. Call the `invert()` function when clicked
     2. Pass in the argument `chkBoxes[]`
     3. Only `invert()` the checkboxes in the group `chkBoxes[]`
 - The only difference for `selectAll()` and `selectNone()` is the name of the function to call
-- Buttons are only linked to checkbox groups by the parameter they send to the function so can technically appear anywhere on the page, but should be close to their linked HTML elements for ease of use
+- **REMEMBER TO CHANGE THE INPUT PARAMETER TO THE FUNCTION FOR EACH SET OF BUTTONS YOU CREATE**  
+Otherwise clicking 1 buttong will affect multiple groups
 - &nbsp;
-- jQuery functions set the **property** of an input element using `item.prop("checked", true);` because `item.attr('checked','checked');` doesn't work  
+- jQuery functions set the **property** of an HTML input element using `item.prop("checked", true);` because `item.attr('checked','checked');` doesn't work  
 `attr` updates the HTML & you can see it happen in realtime using *Inspect Element*, but the actual page doesn't change
 - `selectAll` simply adds `element.prop("checked", true);` to every element in a group regardless of its current state  
 This guarantees all items in a group are checked & it doesn't hurt to set the property to `true` if it's already `true`
@@ -48,13 +51,10 @@ This guarantees all items in a group are checked & it doesn't hurt to set the pr
 - &nbsp;
 - **USE `selectNone` ON RADIO BUTTONS TO "DE-SELECT" THE RADIO BUTTON ALTOGETHER, BUT `invert` & `selectNone` WON'T WORK FOR RADIO BUTTONS***
 
-###PHP Version Specific
+###PHP Specific
 - Form submits to itself
-- Prints out the contents of the `$_POST` array (empty to start since form isn't submitted)
-- Uses a for loop to print checkboxes & labels (or just use the HTML version)
-
-###Pure HTML Version Specific
-- No form processing (since it's basic HTML)
+- Prints out the contents of the `$_POST` array (empty to start with since form isn't submitted)
+- Uses a `for loop` to print checkboxes & labels (or just use the HTML version)
 
 ##Previous Versions (failed attempts)
 The `attempts/` folder is a collections of my initial versions which didn't pan out
