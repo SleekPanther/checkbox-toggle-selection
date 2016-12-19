@@ -10,8 +10,8 @@
 		//All 3 functions take in the HTML name attribute of a certain group of input elements & performs the action (select all, none, invert) ONLY ON THAT GROUP
 
 		//Select all items in a group when given the HTML name attribute of some input elements in a group
-		function selectAll(nameToInvert){
-			var inputs=$("input[name='"+nameToInvert+"']");	//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
+		function selectAll(nameGroupToToggle){
+			var inputs=$("input[name='"+nameGroupToToggle+"']");	//array of inputs with the "name" attribute matching "nameGroupToToggle", the argument passed in
 			$.each(inputs, function(index){			//iterate over each item in "inputs" array
 				var element=$(inputs[index]);		//get HTML object of each input element in the array
 				element.prop("checked", true);		//Adds the property to all inputs. Doesn't matter if it's already true, changes the value to true anyway (redundant but not harmful)
@@ -19,8 +19,8 @@
 		}
 
 		//Same structure as "selectAll()" but it changes the "checked" property to "false" to unselect each item
-		function selectNone(nameToInvert){
-			var inputs=$("input[name='"+nameToInvert+"']");
+		function selectNone(nameGroupToToggle){
+			var inputs=$("input[name='"+nameGroupToToggle+"']");
 			$.each(inputs, function(index){	
 				var element=$(inputs[index]);	
 				element.prop("checked", false);		//deselect the item
@@ -28,8 +28,8 @@
 		}
 
 		//iterate through an array of input elements & negate the "checked" property
-		function invert(nameToInvert){
-			var inputs=$("input[name='"+nameToInvert+"']");		//array of inputs with the "name" attribute matching "nameToInvert", the argument passed in
+		function invert(nameGroupToToggle){
+			var inputs=$("input[name='"+nameGroupToToggle+"']");		//array of inputs with the "name" attribute matching "nameGroupToToggle", the argument passed in
 			$.each(inputs, function(index){		//iterate over each item in "inputs" array
 				var element=$(inputs[index]);	//get HTML object of each input element in the array
 
