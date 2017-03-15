@@ -2,10 +2,10 @@
 
 Uses jQuery & JavaScript to select the opposite of any checkboxes that are currently selected
 
-##[Live Demo](https://npatullo.w3.uvm.edu/toggle/)
+## [Live Demo](https://npatullo.w3.uvm.edu/toggle/)
 This uses PHP, but you can simply `view page source` to get a pure HTML version
 
-##jQuery Functions
+## jQuery Functions
 - `Invert Current Selection` (checkboxes only)
 - `Select All`
 - `Select None`
@@ -19,8 +19,8 @@ It doesn't break anything, just doesn't work as intended
 No CSS just to make things easier to understand  
 Possible improvements could be styling the buttons
 
-##Code Details & Usage
-###jQuery Functions (General Usage)
+## Code Details & Usage
+### jQuery Functions (General Usage)
 - jQuery functions work by taking in an input parameter which is the `name` attribute of an HTML input tag  
 This should be the `name` **for a group of elements**  
 The action to **select all, none, or invert** is only performed on that group
@@ -51,15 +51,15 @@ This guarantees all items in a group are checked & it doesn't hurt to set the pr
 - &nbsp;
 - **USE `selectNone` ON RADIO BUTTONS TO "DE-SELECT" THE RADIO BUTTON ALTOGETHER, BUT `invert` & `selectNone` WON'T WORK FOR RADIO BUTTONS***
 
-###PHP Specific
+### PHP Specific
 - Form submits to itself
 - Prints out the contents of the `$_POST` array (empty to start with since form isn't submitted)
 - Uses a `for loop` to print checkboxes & labels (or just use the HTML version)
 
-##Previous Versions (failed attempts)
+## Previous Versions (failed attempts)
 The `attempts/` folder is a collections of my initial versions which didn't pan out
 
-###Tutorial Sources
+### Tutorial Sources
 I cobbled together my own `invert()` function based on various sources because none of them individually was exactly what I was looking for
 - **[JQuery checkboxes inverse selection | Marko Jakic](http://markojakic.net/jquery-checkboxes-inverse-selection) Probably the most help, but added to it & expanded compact if-else form**
 - **[Stack Overflow: javascript - Why is jQuery is not checking/unchecking checkbox](http://stackoverflow.com/a/18439482) finally figured out why adding `checked` wasn't actually updating the html**
