@@ -3,6 +3,7 @@
 Uses jQuery & JavaScript to select the opposite of any checkboxes that are currently selected
 
 ## [Live Demo](https://npatullo.w3.uvm.edu/toggle/)
+![](pictures/demo1.gif)  
 This uses PHP, but you can simply `view page source` to get a pure HTML version
 
 ## jQuery Functions
